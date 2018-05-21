@@ -7,3 +7,4 @@ def myFunc(fileName):
     return
 
 myFunc('Test Data - SOLAR - Building.csv')
+
