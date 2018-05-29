@@ -8,6 +8,7 @@ import SystemNavigation from './SystemNavigation';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import Axios from 'axios';
 
 // Local import
 import LineChart from './LineChart';
@@ -62,6 +63,14 @@ class Reports extends Component {
 
     componentDidMount = function() {
         window.addEventListener('scroll', this.handleScroll);
+        Axios.get("http://127.0.0.1:5002/visual")
+      .then((response) => {
+        console.log(response);
+        return response.data;
+      }).then()
+      .catch((error) => {
+        console.log(error);
+      });
     };
 
     componentWillUnmount = function() {
