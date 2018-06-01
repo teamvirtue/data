@@ -63,7 +63,7 @@ class Reports extends Component {
 
     componentDidMount = function() {
         window.addEventListener('scroll', this.handleScroll);
-        Axios.get("http://127.0.0.1:5002/visual")
+        Axios.get("http://127.0.0.1:5002/socket")
       .then((response) => {
         console.log(response);
         return response.data;
