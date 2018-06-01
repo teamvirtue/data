@@ -1,6 +1,6 @@
 from flask import Flask, request, Response
 from flask_restful import Resource, Api
-from json import dumps
+import json
 from flask.ext.jsonpify import jsonify
 import pandas as pd
 import pymysql
@@ -14,19 +14,25 @@ conn = pymysql.connect(
     passwd = 'root',
     db = 'solar'
 )
-a = conn.cursor()
-sql = 'SELECT * FROM `rooms`;'
-a.execute(sql)
-data = a.fetchone()
-print(data)
+
 
 @app.route('/')
 def api_root():
     return 'Welcome'
 
-@app.route('/socket')
+@app.route('/room')
 def api_articles():
-    return {}
+    a = conn.cursor()
+    sql = 'SELECT * FROM `rooms`;'
+    a.execute(sql)
+    data = a.fetchone()
+    print(data[2])
+    response1 = {}
+    response1["name"] = data[2]
+    response1["another"] = data[3]
+    resp = Response(response=json.dumps(response1),status = 200,mimetype = "application/json")
+    return (resp)
+
 
 if __name__ == '__main__':
      app.run(port='5002')
