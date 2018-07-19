@@ -1,9 +1,9 @@
 CREATE TABLE IF NOT EXISTS Appliance_Brightness (
-    `appliance_brightness_id` INT,
-    `appliance_id` INT,
-    `brightness` INT,
-    `start_time` VARCHAR(4) CHARACTER SET utf8,
-    `end_time` VARCHAR(5) CHARACTER SET utf8
+    "appliance_brightness_id" INT,
+    "appliance_id" INT,
+    "brightness" INT,
+    "start_time" VARCHAR(4) ,
+    "end_time" VARCHAR(5) 
 );
 INSERT INTO Appliance_Brightness VALUES
     (1,11,74,'0:34','1:39'),
@@ -17,10 +17,10 @@ INSERT INTO Appliance_Brightness VALUES
     (9,11,83,'7:15','5:47'),
     (10,11,31,'7:06','5:57');
 CREATE TABLE IF NOT EXISTS Battery (
-    `battery_id` INT,
-    `building_id` INT,
-    `percentage_charged` NUMERIC(3, 0),
-    `system_status` VARCHAR(3) CHARACTER SET utf8
+    "battery_id" INT,
+    "building_id" INT,
+    "percentage_charged" NUMERIC(3, 0),
+    "system_status" VARCHAR(3) 
 );
 INSERT INTO Battery VALUES
     (1,1,88,'ON'),
@@ -39,13 +39,13 @@ INSERT INTO Battery VALUES
     (14,14,66,'ON'),
     (15,15,16,'ON');
 CREATE TABLE IF NOT EXISTS Building (
-    `building_id` INT,
-    `building_name` VARCHAR(8) CHARACTER SET utf8,
-    `city` VARCHAR(3) CHARACTER SET utf8,
-    `street` VARCHAR(13) CHARACTER SET utf8,
-    `postcode` VARCHAR(6) CHARACTER SET utf8,
-    `country` VARCHAR(5) CHARACTER SET utf8,
-    `nr_of_floors` INT
+    "building_id" INT,
+    "building_name" VARCHAR(8) ,
+    "city" VARCHAR(3) ,
+    "street" VARCHAR(13) ,
+    "postcode" VARCHAR(6) ,
+    "country" VARCHAR(5) ,
+    "nr_of_floors" INT
 );
 INSERT INTO Building VALUES
     (1,'Solar 1','UAE','Blackbird','6178FH','Dubai',5),
@@ -64,9 +64,9 @@ INSERT INTO Building VALUES
     (14,'Solar 14','UAE','Kropf','2434MM','Dubai',4),
     (15,'Solar 15','UAE','Westend','6942JJ','Dubai',3);
 CREATE TABLE IF NOT EXISTS Family (
-    `family_id` INT,
-    `house_id` INT,
-    `nr_of_members` INT
+    "family_id" INT,
+    "house_id" INT,
+    "nr_of_members" INT
 );
 INSERT INTO Family VALUES
     (1,1,3),
@@ -78,10 +78,10 @@ INSERT INTO Family VALUES
     (7,7,3),
     (8,8,2);
 CREATE TABLE IF NOT EXISTS Faucet (
-    `faucet_id` INT,
-    `appliance_id` INT,
-    `avg_water_consumed_per_day` INT,
-    `faucet_status` VARCHAR(3) CHARACTER SET utf8
+    "faucet_id" INT,
+    "appliance_id" INT,
+    "avg_water_consumed_per_day" INT,
+    "faucet_status" VARCHAR(3) 
 );
 INSERT INTO Faucet VALUES
     (1,2,689,'OFF'),
@@ -92,12 +92,12 @@ INSERT INTO Faucet VALUES
     (6,9,326,'OFF'),
     (7,12,555,'ON');
 CREATE TABLE IF NOT EXISTS Faucet_Readings (
-    `faucet_readings_id` INT,
-    `faucet_id` INT,
-    `reading_time` VARCHAR(20) CHARACTER SET utf8,
-    `water_consumed` INT,
-    `hot_water_reading` INT,
-    `cold_water_reading` INT
+    "faucet_readings_id" INT,
+    "faucet_id" INT,
+    "reading_time" VARCHAR(20) ,
+    "water_consumed" INT,
+    "hot_water_reading" INT,
+    "cold_water_reading" INT
 );
 INSERT INTO Faucet_Readings VALUES
     (1,6,'2018-04-21 1:10:00',1,1,0),
@@ -1104,11 +1104,11 @@ INSERT INTO Faucet_Readings VALUES
     (999,7,'2018-04-27 23:30:00',98,97,1),
     (1000,7,'2018-04-27 23:40:00',98,96,2);
 CREATE TABLE IF NOT EXISTS Houses_Flats (
-    `house_id` INT,
-    `building_id` INT,
-    `floor_nr` INT,
-    `house_rating` INT,
-    `energy_budget` INT
+    "house_id" INT,
+    "building_id" INT,
+    "floor_nr" INT,
+    "house_rating" INT,
+    "energy_budget" INT
 );
 INSERT INTO Houses_Flats VALUES
     (1,1,1,1,1000),
@@ -1122,16 +1122,16 @@ INSERT INTO Houses_Flats VALUES
     (9,1,5,1,1000),
     (10,1,5,1,1000);
 CREATE TABLE IF NOT EXISTS Grid (
-    `grid_id` INT,
-    `current_power_stored` INT
+    "grid_id" INT,
+    "current_power_stored" INT
 );
 INSERT INTO Grid VALUES
     (1,100);
 CREATE TABLE IF NOT EXISTS Light (
-    `light_id` INT,
-    `room_id` INT,
-    `color_temperature` INT,
-    `brightness` INT
+    "light_id" INT,
+    "room_id" INT,
+    "color_temperature" INT,
+    "brightness" INT
 );
 INSERT INTO Light VALUES
     (1,1,3608,390),
@@ -1185,11 +1185,11 @@ INSERT INTO Light VALUES
     (49,49,4097,386),
     (50,50,5227,463);
 CREATE TABLE IF NOT EXISTS List_Of_Possible_Appliances (
-    `appliance_id` INT,
-    `appliance_name` VARCHAR(15) CHARACTER SET utf8,
-    `maximum_output_voltage` INT,
-    `minimum_output_voltage` INT,
-    `last_brightness` INT
+    "appliance_id" INT,
+    "appliance_name" VARCHAR(15) ,
+    "maximum_output_voltage" INT,
+    "minimum_output_voltage" INT,
+    "last_brightness" INT
 );
 INSERT INTO List_Of_Possible_Appliances VALUES
     (1,'Microwave Oven',1500,1000,NULL),
@@ -1206,12 +1206,12 @@ INSERT INTO List_Of_Possible_Appliances VALUES
     (12,'Dishwasher',82,78,NULL),
     (13,'Washing Machine',112,108,NULL);
 CREATE TABLE IF NOT EXISTS Person_Activity (
-    `activity_id` INT,
-    `person_id` INT,
-    `start_time` VARCHAR(5) CHARACTER SET utf8,
-    `activity_duration` INT,
-    `end_time` VARCHAR(5) CHARACTER SET utf8,
-    `activity_type` VARCHAR(8) CHARACTER SET utf8
+    "activity_id" INT,
+    "person_id" INT,
+    "start_time" VARCHAR(5) ,
+    "activity_duration" INT,
+    "end_time" VARCHAR(5) ,
+    "activity_type" VARCHAR(8) 
 );
 INSERT INTO Person_Activity VALUES
     (1,13,'7:33',8,'15:33','Sleeping'),
@@ -2218,18 +2218,18 @@ INSERT INTO Person_Activity VALUES
     (999,11,'2:16',7,'9:16','Sleeping'),
     (1000,12,'0:43',1,'1:43','Reading');
 CREATE TABLE IF NOT EXISTS Personal_Details (
-    `personId` INT,
-    `family_id` INT,
-    `birthdate` DATETIME,
-    `food_preference` VARCHAR(14) CHARACTER SET utf8,
-    `last_sleep_from` VARCHAR(5) CHARACTER SET utf8,
-    `last_sleep_till` VARCHAR(5) CHARACTER SET utf8,
-    `first_name` VARCHAR(10) CHARACTER SET utf8,
-    `last_name` VARCHAR(10) CHARACTER SET utf8,
-    `middle_name` VARCHAR(11) CHARACTER SET utf8,
-    `gender` VARCHAR(6) CHARACTER SET utf8,
-    `email` VARCHAR(27) CHARACTER SET utf8,
-    `phone_nr` VARCHAR(12) CHARACTER SET utf8
+    "personId" INT,
+    "family_id" INT,
+    "birthdate" VARCHAR(50),
+    "food_preference" VARCHAR(14) ,
+    "last_sleep_from" VARCHAR(5) ,
+    "last_sleep_till" VARCHAR(5) ,
+    "first_name" VARCHAR(10) ,
+    "last_name" VARCHAR(10) ,
+    "middle_name" VARCHAR(11) ,
+    "gender" VARCHAR(6) ,
+    "email" VARCHAR(27) ,
+    "phone_nr" VARCHAR(12) 
 );
 INSERT INTO Personal_Details VALUES
     (1,1,'1986-12-27 00:00:00','Flexitarian','20:59','14:24','Shelia','Snaddin','Eachelle','Female','esnaddin0@themeforest.net','273-975-6431'),
@@ -2250,12 +2250,12 @@ INSERT INTO Personal_Details VALUES
     (16,8,'2014-04-11 00:00:00','Vegetarian','7:48','14:03','Berne','Prickett','Danie','Male','dprickettf@reddit.com','275-513-2217'),
     (17,8,'2002-05-17 00:00:00','Flexitarian','13:01','13:32','Felita','Barfield','Dorisa','Female','dbarfieldg@surveymonkey.com','500-213-8993');
 CREATE TABLE IF NOT EXISTS Room_Readings (
-    `reading_time` VARCHAR(19) CHARACTER SET utf8,
-    `room_id` INT,
-    `temperature` INT,
-    `humidity` INT,
-    `amount_of_CO2` INT,
-    `lux` INT
+    "reading_time" VARCHAR(19) ,
+    "room_id" INT,
+    "temperature" INT,
+    "humidity" INT,
+    "amount_of_CO2" INT,
+    "lux" INT
 );
 INSERT INTO Room_Readings VALUES
     ('2018-09-21 07:01:24',45,23,45,30,50),
@@ -3262,16 +3262,16 @@ INSERT INTO Room_Readings VALUES
     ('2017-10-18 14:56:16',151,4,31,67,38),
     ('2018-01-19 22:54:46',118,16,44,47,49);
 CREATE TABLE IF NOT EXISTS Rooms (
-    `room_id` INT,
-    `house_id` INT,
-    `room_name` VARCHAR(11) CHARACTER SET utf8,
-    `last_humidity` INT,
-    `last_temperature` INT,
-    `last_amount_CO2` INT,
-    `last_reading_time` DATETIME,
-    `nr_of_appliances` INT,
-    `last_lux` INT,
-    `night_mode` VARCHAR(3) CHARACTER SET utf8
+    "room_id" INT,
+    "house_id" INT,
+    "room_name" VARCHAR(11) ,
+    "last_humidity" INT,
+    "last_temperature" INT,
+    "last_amount_CO2" INT,
+    "last_reading_time" VARCHAR(50),
+    "nr_of_appliances" INT,
+    "last_lux" INT,
+    "night_mode" VARCHAR(3) 
 );
 INSERT INTO Rooms VALUES
     (1,1,'Living Room',41,14,33,'2017-10-16 01:40:22',2,57,'OFF'),
@@ -3325,10 +3325,10 @@ INSERT INTO Rooms VALUES
     (49,10,'Bedroom',58,14,35,'2017-03-29 10:40:25',3,32,'OFF'),
     (50,10,'Dining Room',60,17,44,'2017-03-24 15:36:37',3,71,'OFF');
 CREATE TABLE IF NOT EXISTS Socket_Readings (
-    `socket_readings_id` INT,
-    `socket_id` INT,
-    `power_consumed` NUMERIC(3, 2),
-    `reading_time` DATETIME
+    "socket_readings_id" INT,
+    "socket_id" INT,
+    "power_consumed" NUMERIC(3, 2),
+    "reading_time" VARCHAR(50)
 );
 INSERT INTO Socket_Readings VALUES
     (1,20,0.02,'2018-04-21 01:10:00'),
@@ -4335,12 +4335,12 @@ INSERT INTO Socket_Readings VALUES
     (999,7,0.18,'2018-04-27 23:30:00'),
     (999,13,0.2,'2018-04-27 23:40:00');
 CREATE TABLE IF NOT EXISTS Sockets (
-    `socket_id` INT,
-    `appliance_id` INT,
-    `room_id` INT,
-    `socket_status` VARCHAR(3) CHARACTER SET utf8,
-    `avg_power_consumed` NUMERIC(2, 1),
-    `socket_name` VARCHAR(18) CHARACTER SET utf8
+    "socket_id" INT,
+    "appliance_id" INT,
+    "room_id" INT,
+    "socket_status" VARCHAR(3) ,
+    "avg_power_consumed" NUMERIC(2, 1),
+    "socket_name" VARCHAR(18) 
 );
 INSERT INTO Sockets VALUES
     (1,1,1,'ON',1.9,'Socket Living Room'),
@@ -4364,11 +4364,11 @@ INSERT INTO Sockets VALUES
     (19,19,19,'OFF',2.1,'Socket Bedroom'),
     (20,20,20,'OFF',2.2,'Socket Dining Room');
 CREATE TABLE IF NOT EXISTS Solar_Panel (
-    `solar_panel_id` INT,
-    `battery_id` INT,
-    `grid_id` INT,
-    `energy_generated` NUMERIC(5, 2),
-    `send_to_grid` VARCHAR(3) CHARACTER SET utf8
+    "solar_panel_id" INT,
+    "battery_id" INT,
+    "grid_id" INT,
+    "energy_generated" NUMERIC(5, 2),
+    "send_to_grid" VARCHAR(3) 
 );
 INSERT INTO Solar_Panel VALUES
     (1,14,1,111.78,'OFF'),
@@ -4572,10 +4572,10 @@ INSERT INTO Solar_Panel VALUES
     (199,10,1,92.38,'OFF'),
     (200,11,1,96.43,'OFF');
 CREATE TABLE IF NOT EXISTS Solar_Panel_Readings (
-    `solar_panel_reading_id` INT,
-    `solar_panel_id` INT,
-    `energy_generated` NUMERIC(4, 3),
-    `reading_time` DATETIME
+    "solar_panel_reading_id" INT,
+    "solar_panel_id" INT,
+    "energy_generated" NUMERIC(4, 3),
+    "reading_time" VARCHAR(50)
 );
 INSERT INTO Solar_Panel_Readings VALUES
     (1,14,0.009,'2018-04-21 01:10:00'),
@@ -5582,8 +5582,8 @@ INSERT INTO Solar_Panel_Readings VALUES
     (999,4,0.008,'2018-04-27 23:30:00'),
     (1000,17,0.008,'2018-04-27 23:40:00');
 CREATE TABLE IF NOT EXISTS Types_Of_Activites (
-    `activity_name` VARCHAR(8) CHARACTER SET utf8,
-    `activity_description` VARCHAR(66) CHARACTER SET utf8
+    "activity_name" VARCHAR(8) ,
+    "activity_description" VARCHAR(66) 
 );
 INSERT INTO Types_Of_Activites VALUES
     ('Hockey','velit eu est congue elementum'),
@@ -5596,10 +5596,10 @@ INSERT INTO Types_Of_Activites VALUES
     ('Eating','dui nec nisi volutpat eleifend donec ut dolor'),
     ('Acting','consectetuer adipiscing elit proin risus praesent');
 CREATE TABLE IF NOT EXISTS Water_System (
-    `water_system_id` INT,
-    `house_id` INT,
-    `total_usage` INT,
-    `system_status` VARCHAR(3) CHARACTER SET utf8
+    "water_system_id" INT,
+    "house_id" INT,
+    "total_usage" INT,
+    "system_status" VARCHAR(3) 
 );
 INSERT INTO Water_System VALUES
     (1,1,3224,'ON'),
@@ -5613,15 +5613,15 @@ INSERT INTO Water_System VALUES
     (9,9,292,'ON'),
     (10,10,2238,'ON');
 CREATE TABLE IF NOT EXISTS Weather_Readings (
-    `weather_id` INT,
-    `building_id` INT,
-    `reading_time` VARCHAR(24) CHARACTER SET utf8,
-    `temperature` INT,
-    `humidity` INT,
-    `wind_speed` INT,
-    `wind_direction` INT,
-    `solar_radiation` INT,
-    `amount_of_co2` NUMERIC(4, 3)
+    "weather_id" INT,
+    "building_id" INT,
+    "reading_time" VARCHAR(24) ,
+    "temperature" INT,
+    "humidity" INT,
+    "wind_speed" INT,
+    "wind_direction" INT,
+    "solar_radiation" INT,
+    "amount_of_co2" NUMERIC(4, 3)
 );
 INSERT INTO Weather_Readings VALUES
     (1,6,'2018-04-21 1:10:00',32,45,13,291,1399,0.067),
@@ -6628,10 +6628,10 @@ INSERT INTO Weather_Readings VALUES
     (999,12,'2018-04-27 23:30:00',24,49,12,244,1323,0.057),
     (1000,4,'2018-04-27 23:40:00',36,33,21,318,1412,0.069);
 CREATE TABLE IF NOT EXISTS Weekdays (
-    `day_of_the_week` VARCHAR(9) CHARACTER SET utf8,
-    `family_id` INT,
-    `work_day_start` VARCHAR(4) CHARACTER SET utf8,
-    `work_day_end` VARCHAR(5) CHARACTER SET utf8
+    "day_of_the_week" VARCHAR(9) ,
+    "family_id" INT,
+    "work_day_start" VARCHAR(4) ,
+    "work_day_end" VARCHAR(5) 
 );
 INSERT INTO Weekdays VALUES
     ('Monday',1,'9:00','18:00'),

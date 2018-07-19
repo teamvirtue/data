@@ -6,5 +6,5 @@ def myFunc(fileName):
             print(line)
     return
 
-myFunc('Test Data - SOLAR - Building.csv')
+myFunc('Test Data - SOLAR - Light.csv')
 
